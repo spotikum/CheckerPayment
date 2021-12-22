@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -16,35 +17,32 @@ import android.widget.Toast;
 
 public class RegisActivity extends AppCompatActivity {
 
-    int textSize = 0;
-    SeekBar seekBar;
-    String pilih = "", s1 = "", s2 = "", s3 = "";
-    TextView txtSeekBar;
-    EditText nama, email, pass, comfrmpass;
-    CheckBox kasur, lemari, kulkas;
-    RadioGroup pilihan;
+    private EditText textNama, textTelepon, textAlamat;
+    private TextView textUmur;
+    private RadioGroup radioGroup;
+    private String jenisKelamin = "";
+    private SeekBar seekBarUmur;
+    private CheckBox jenisPelanggan;
+    private Button buttonDaftar;
 
+    Database DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regis);
-        kasur = findViewById(R.id.air);
-        lemari = findViewById(R.id.listrik);
-        kulkas = findViewById(R.id.sampah);
-        nama = findViewById(R.id.inputNama);
-        email = findViewById(R.id.inputEmail);
-        pass = findViewById(R.id.inputTelepon);
-        comfrmpass = findViewById(R.id.inputAlamat);
-        seekBar = (SeekBar) findViewById(R.id.seekBar);
-        txtSeekBar = findViewById(R.id.ratingvalue);
-        txtSeekBar.setText(Integer.toString(textSize));
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
-            int progress = 0;
-
+        DB = new Database(this);
+        textNama = findViewById(R.id.textNama);
+        textTelepon = findViewById(R.id.textTelepon);
+        textAlamat = findViewById(R.id.textAlamat);
+        textUmur = findViewById(R.id.textUmur);
+        jenisPelanggan = findViewById(R.id.jenisPelannggan);
+        seekBarUmur = findViewById(R.id.seekBarUmur);
+        seekBarUmur.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                textUmur.setText(String.valueOf(i));
             }
 
             @Override
@@ -53,76 +51,74 @@ public class RegisActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
-                textSize = textSize + (progressValue - progress);
-                progress = progressValue;
-                txtSeekBar.setText(Integer.toString(textSize));
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        radioGroup = findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener((radioGroup, id) -> {
+            switch (id){
+                case R.id.radioButtonLakiLaki:
+                    jenisKelamin = "Laki - laki";
+                    break;
+                case R.id.radioButtonPerempuan:
+                    jenisKelamin = "Perempuan";
+                    break;
             }
         });
 
-        pilihan = findViewById(R.id.radioGroup);
-        pilihan.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int id) {
-                switch (id){
-                    case R.id.rb1:
-                        pilih = "Perempuan";
-                        break;
-                    case R.id.rb2:
-                        pilih = "Laki-laki";
+        buttonDaftar = findViewById(R.id.buttonSimpan);
+        buttonDaftar.setOnClickListener(view -> {
+                if(!jenisKelamin.equals("")){
+                    boolean check = DB.insertUser(
+                            textNama.getText().toString(),
+                            textTelepon.getText().toString(),
+                            textAlamat.getText().toString(),
+                            jenisKelamin,
+                            Integer.parseInt(textUmur.getText().toString())
+                    );
+                    if (check){
+                        Toast.makeText(RegisActivity.this, "Berhasil menambahkan data User ke SQLite", Toast.LENGTH_LONG).show();
+                    }else{
+                        Toast.makeText(RegisActivity.this, "Gagal menambahkan data User ke SQLite", Toast.LENGTH_LONG).show();
+                    }
+                    showData();
+                }else{
+                    Toast.makeText(RegisActivity.this, "Pilih jenis kelamin Anda terlebih dahulu.", Toast.LENGTH_SHORT).show();
                 }
-            }
         });
     }
-    public void submit(View view) {
-        showDialog();
-    }
-    private void showDialog(){
-        if(kasur.isChecked()){
-            s1 = "\n Kasur";
-        }
-        if(lemari.isChecked()){
-            s2 = "\n Lemari";
-        }
-        if(kulkas.isChecked()){
-            s3 = "\n Kulkas";
-        }
 
-        if(nama.getText().toString().isEmpty() || email.getText().toString().isEmpty() ||
-                pilih == "" || pass.getText().toString().isEmpty() || comfrmpass.getText().toString().isEmpty()) {
-            Toast.makeText(getApplicationContext(),"Data belum lengkap",Toast.LENGTH_SHORT).show();
-        }
-        else {
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                    this);
+    private void showData(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+        alertDialogBuilder.setTitle("Informasi");
 
-            alertDialogBuilder.setTitle("Data User");
-            alertDialogBuilder
-                    .setMessage("Nama: " +nama.getText().toString()+
-                            "\nEmail: " + email.getText().toString()+
-                            "\nPassword : " +pass.getText().toString()+
-                            "\nJenis Kelamin: " +pilih+
-                            "\nFasilitas: " +s1+s2+s3+
-                            "\nUmur: " + textSize)
-                    .setIcon(R.drawable.file)
-                    .setCancelable(false)
-                    .setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
-                    });
+        StringBuilder sb = new StringBuilder();
+        sb.append("Pendaftaran Anda Berhasil!!\n");
+        sb.append("Nama : " + textNama.getText().toString() + "\n");
+        sb.append("Telepon : " + textTelepon.getText().toString() + "\n");
+        sb.append("Alamat : " + textAlamat.getText().toString() + "\n");
+        sb.append("Umur : " + textUmur.getText().toString() + "\n");
+        sb.append("Jenis Kelamin : " + jenisKelamin + "\n");
 
-            AlertDialog alertDialog = alertDialogBuilder.create();
-            alertDialog.show();
+        alertDialogBuilder
+                .setMessage(sb.toString())
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Ya", (dialog, id) -> {
+                    Intent intent = new Intent(RegisActivity.this, DetailActivity.class);
+                    intent.putExtra("nama", textNama.getText().toString());
+                    intent.putExtra("telepon", textTelepon.getText().toString());
+                    intent.putExtra("alamat", textAlamat.getText().toString());
+                    intent.putExtra("umur", textUmur.getText().toString());
+                    intent.putExtra("jenis_kelamin", jenisKelamin);
+                    startActivity(intent);
+                    finish();
+                });
 
-            Intent intent = new Intent(RegisActivity.this, DetailActivity.class);
-            intent.putExtra("Nama", nama.getText().toString());
-            intent.putExtra("Email", email.getText().toString());
-            intent.putExtra("Password", pass.getText().toString());
-            intent.putExtra("Jenis Kelamin", pilih);
-            intent.putExtra("Fasilitas", s1+s2+s3);
-            intent.putExtra("Umur", txtSeekBar.getText().toString());
-            startActivity(intent);
-        }
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        alertDialog.show();
     }
 }
