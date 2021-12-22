@@ -8,11 +8,15 @@
 
     <Button
         android:id="@+id/button_add_data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Data"
+        android:layout_width="268dp"
+        android:layout_height="65dp"
+        android:text="+"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.959" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

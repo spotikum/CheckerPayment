@@ -17,8 +17,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="100dp">
+            android:orientation="vertical">
 
 
             <androidx.cardview.widget.CardView
@@ -37,17 +36,19 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="577dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/dd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="25dp"
+                        android:paddingTop="10dp"
                         android:text="Data Akun"
-                        android:textSize="14sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -60,7 +61,7 @@
                         android:layout_marginLeft="35dp"
                         android:layout_marginTop="25dp"
                         android:text="Nama"
-                        android:textSize="14sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -72,7 +73,7 @@
                         android:layout_marginStart="35dp"
                         android:layout_marginLeft="35dp"
                         android:text="Nama"
-                        android:textSize="14sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/textemail"
@@ -84,7 +85,7 @@
                         android:layout_marginLeft="35dp"
                         android:layout_marginTop="15dp"
                         android:text="Email"
-                        android:textSize="14sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -96,7 +97,7 @@
                         android:layout_marginStart="35dp"
                         android:layout_marginLeft="35dp"
                         android:text="Email"
-                        android:textSize="14sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/textpass"
@@ -107,8 +108,8 @@
                         android:layout_marginStart="35dp"
                         android:layout_marginLeft="35dp"
                         android:layout_marginTop="15dp"
-                        android:text="Password"
-                        android:textSize="14sp"
+                        android:text="Telepon"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -119,8 +120,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginStart="35dp"
                         android:layout_marginLeft="35dp"
-                        android:text="Password"
-                        android:textSize="14sp" />
+                        android:text="Telepon"
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/textjk"
@@ -131,8 +132,8 @@
                         android:layout_marginStart="35dp"
                         android:layout_marginLeft="35dp"
                         android:layout_marginTop="15dp"
-                        android:text="Jenis Kelamin"
-                        android:textSize="14sp"
+                        android:text="Alamat"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -143,8 +144,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginStart="35dp"
                         android:layout_marginLeft="35dp"
-                        android:text="Jenis Kelamin"
-                        android:textSize="14sp" />
+                        android:text="Alamat"
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/textfas"
@@ -156,7 +157,7 @@
                         android:layout_marginLeft="35dp"
                         android:layout_marginTop="15dp"
                         android:text="Fasilitas"
-                        android:textSize="14sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -168,7 +169,7 @@
                         android:layout_marginStart="35dp"
                         android:layout_marginLeft="35dp"
                         android:text="Fasilitas"
-                        android:textSize="14sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/textumur"
@@ -180,7 +181,7 @@
                         android:layout_marginLeft="35dp"
                         android:layout_marginTop="15dp"
                         android:text="Umur"
-                        android:textSize="14sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -193,7 +194,7 @@
                         android:layout_marginLeft="35dp"
                         android:layout_marginBottom="20dp"
                         android:text="100"
-                        android:textSize="14sp" />
+                        android:textSize="20sp" />
 
                 </RelativeLayout>
 

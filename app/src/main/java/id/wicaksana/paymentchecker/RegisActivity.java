@@ -29,13 +29,13 @@ public class RegisActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regis);
-        kasur = findViewById(R.id.kasur);
-        lemari = findViewById(R.id.lemari);
-        kulkas = findViewById(R.id.kulkas);
-        nama = findViewById(R.id.inputName);
+        kasur = findViewById(R.id.air);
+        lemari = findViewById(R.id.listrik);
+        kulkas = findViewById(R.id.sampah);
+        nama = findViewById(R.id.inputNama);
         email = findViewById(R.id.inputEmail);
-        pass = findViewById(R.id.inputPass);
-        comfrmpass = findViewById(R.id.inputConfirmPass);
+        pass = findViewById(R.id.inputTelepon);
+        comfrmpass = findViewById(R.id.inputAlamat);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         txtSeekBar = findViewById(R.id.ratingvalue);
         txtSeekBar.setText(Integer.toString(textSize));
