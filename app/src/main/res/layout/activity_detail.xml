@@ -1,205 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DAF2DC"
-    tools:context=".DetailActivity">
-
-
+    android:padding="30dp"
+    tools:context=".MainActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:orientation="vertical">
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card"
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Data Pelanggan"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Data pelanggan yang baru dimasukkan"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:padding="20dp"
-                app:cardBackgroundColor="#81B7D2"
-                card_view:cardCornerRadius="30dp">
-
-                <RelativeLayout
+                android:hint="Nama"
+                app:startIconDrawable="@drawable/ic_baseline_person_24">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textNama"
                     android:layout_width="match_parent"
-                    android:layout_height="577dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/dd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="25dp"
-                        android:paddingTop="10dp"
-                        android:text="Data Akun"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/textnama"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/dd"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="35dp"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="25dp"
-                        android:text="Nama"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/nama"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/textnama"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="35dp"
-                        android:layout_marginLeft="35dp"
-                        android:text="Nama"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/textemail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/nama"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="35dp"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="15dp"
-                        android:text="Email"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/textemail"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="35dp"
-                        android:layout_marginLeft="35dp"
-                        android:text="Email"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/textpass"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/email"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="35dp"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="15dp"
-                        android:text="Telepon"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/pass"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/textpass"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="35dp"
-                        android:layout_marginLeft="35dp"
-                        android:text="Telepon"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/textjk"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/pass"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="35dp"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="15dp"
-                        android:text="Alamat"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/jk"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/textjk"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="35dp"
-                        android:layout_marginLeft="35dp"
-                        android:text="Alamat"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/textfas"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/jk"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="35dp"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="15dp"
-                        android:text="Fasilitas"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/fas"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/textfas"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="35dp"
-                        android:layout_marginLeft="35dp"
-                        android:text="Fasilitas"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/textumur"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/fas"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="35dp"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="15dp"
-                        android:text="Umur"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/umur"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/textumur"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="35dp"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginBottom="20dp"
-                        android:text="100"
-                        android:textSize="20sp" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-        </RelativeLayout>
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:enabled="false"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Telepon"
+                app:startIconDrawable="@drawable/ic_baseline_phone_android_24">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textTelepon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Jenis Kelamin"/>
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/radioButtonLakiLaki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Laki - laki"
+                    android:clickable="false" />
+                <RadioButton
+                    android:id="@+id/radioButtonPerempuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Perempuan"
+                    android:clickable="false" />
+            </RadioGroup>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Alamat"
+                app:startIconDrawable="@drawable/ic_baseline_location_on_24">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textAlamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Umur"
+                app:startIconDrawable="@drawable/ic_baseline_calendar_today_24">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textUmur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonClose"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Close"
+                android:layout_marginTop="20dp"
+                app:cornerRadius="20dp"/>
+        </LinearLayout>
     </ScrollView>
 </RelativeLayout>

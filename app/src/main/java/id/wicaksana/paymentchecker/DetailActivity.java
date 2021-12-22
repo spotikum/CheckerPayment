@@ -2,54 +2,69 @@ package id.wicaksana.paymentchecker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class DetailActivity extends AppCompatActivity {
 
-    TextView nama,email,password,jeniskelamin,fasilitas,umur;
+    private EditText textNama, textTelepon, textAlamat, textUmur;
+    private Button buttonClose;
+    private RadioButton radioButtonLakiLaki, radioButtonPerempuan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        nama = findViewById(R.id.nama);
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.pass);
-        jeniskelamin = findViewById(R.id.jk);
-        fasilitas = findViewById(R.id.fas);
-        umur = findViewById(R.id.umur);
+        Intent getIntentData = getIntent();
+        String nama = getIntentData.getStringExtra("nama");
+        String telepon = getIntentData.getStringExtra("telepon");
+        String alamat = getIntentData.getStringExtra("alamat");
+        String umur = getIntentData.getStringExtra("umur");
+        String jenis_kelamin = getIntentData.getStringExtra("jenis_kelamin");
 
-        nama.setText(getIntent().getExtras().getString("Nama"));
-        email.setText(getIntent().getExtras().getString("Email"));
-        password.setText(getIntent().getExtras().getString("Password"));
-        jeniskelamin.setText(getIntent().getExtras().getString("Jenis Kelamin"));
-        fasilitas.setText(getIntent().getExtras().getString("Fasilitas"));
-        umur.setText(getIntent().getExtras().getString("Umur"));
-    }
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Toast.makeText(this, "Application On Start", Toast.LENGTH_SHORT).show();
+        textNama = findViewById(R.id.textNama);
+        textNama.setText(nama);
+        textTelepon = findViewById(R.id.textTelepon);
+        textTelepon.setText(telepon);
+        textAlamat = findViewById(R.id.textAlamat);
+        textAlamat.setText(alamat);
+        textUmur = findViewById(R.id.textUmur);
+        textUmur.setText(umur);
+        radioButtonLakiLaki = findViewById(R.id.radioButtonLakiLaki);
+        radioButtonPerempuan = findViewById(R.id.radioButtonPerempuan);
+        if(jenis_kelamin.equals("Laki - laki")){
+            radioButtonLakiLaki.setChecked(true);
+        }else{
+            radioButtonPerempuan.setChecked(true);
+        }
+        buttonClose = findViewById(R.id.buttonClose);
+        buttonClose.setOnClickListener(view -> {
+            startActivity(new Intent(DetailActivity.this, MainActivity.class));
+            finish();
+        });
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        Toast.makeText(this, "Application On Resume", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Toast.makeText(this, "Application On Pause", Toast.LENGTH_SHORT).show();
+    public void onBackPressed() {
+        startActivity(new Intent(DetailActivity.this, RegisActivity.class));
+        finish();
     }
 
     @Override
     protected void onDestroy() {
+        Toast.makeText(DetailActivity.this, "Selamat Tinggal. Anda Kembali ke halaman utama.", Toast.LENGTH_SHORT).show();
         super.onDestroy();
-        Toast.makeText(this, "Selamat Tinggal", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStop() {
+        Toast.makeText(DetailActivity.this, "Selamat Tinggal. Anda Kembali ke halaman utama.", Toast.LENGTH_SHORT).show();
+        super.onStop();
     }
 }
