@@ -71,7 +71,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:text="Jenis Kelamin"/>
             <RadioGroup
                 android:id="@+id/radioGroup"
@@ -113,12 +113,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:max="60"/>
-            <CheckBox
-                android:id="@+id/jenisPelannggan"
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Pelanggan tetap?"/>
+                android:layout_marginTop="30dp"
+                android:text="Jenis Pembayaran"/>
+            <CheckBox
+                android:id="@+id/bayarTunai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tunai"/>
+            <CheckBox
+                android:id="@+id/bayarTransfer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BRI"/>
+            <CheckBox
+                android:id="@+id/bayarOVO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OVO"/>
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonSimpan"
                 android:layout_width="150dp"
