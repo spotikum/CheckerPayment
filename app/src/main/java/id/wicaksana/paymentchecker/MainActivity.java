@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(MainActivity.this, recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override public void onItemClick(View view, int position) {
+                    @Override public void onLongItemClick(View view, int position) {
                         int itemPosition = recyclerView.getChildLayoutPosition(view);
                         final GetSetUser item = listDataUser.get(itemPosition);
                         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
@@ -73,24 +73,19 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
-                    @Override
-                    public void onLongItemClick(View view, int position) {
-
+                    @Override public void onItemClick(View view, int position) {
+                        int itemPosition = recyclerView.getChildLayoutPosition(view);
+                        final GetSetUser item = listDataUser.get(itemPosition);
+                        Intent intent = new Intent(MainActivity.this, UpdateActivity.class);
+                        intent.putExtra("id", item.getId());
+                        intent.putExtra("nama", item.getNama());
+                        intent.putExtra("telepon", item.getTelepon());
+                        intent.putExtra("alamat", item.getAlamat());
+                        intent.putExtra("jenis_kelamin", item.getJk());
+                        intent.putExtra("umur", item.getUmur());
+                        startActivity(intent);
+                        finish();
                     }
-
-//                    @Override public void onLongItemClick(View view, int position) {
-//                        int itemPosition = recyclerView.getChildLayoutPosition(view);
-//                        final GetSetUser item = listDataUser.get(itemPosition);
-//                        Intent intent = new Intent(DataActivity.this, UpdateActivity.class);
-//                        intent.putExtra("id", item.getId());
-//                        intent.putExtra("nama", item.getNama());
-//                        intent.putExtra("telepon", item.getTelepon());
-//                        intent.putExtra("alamat", item.getAlamat());
-//                        intent.putExtra("jenis_kelamin", item.getJk());
-//                        intent.putExtra("umur", item.getUmur());
-//                        startActivity(intent);
-//                        finish();
-//                    }
                 })
         );
 

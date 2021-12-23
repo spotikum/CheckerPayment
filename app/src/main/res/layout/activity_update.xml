@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,14 +17,14 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Tambah Pelanggan"
+                android:text="Update Pembayaran"
                 android:textSize="24dp"
                 android:textStyle="bold"
                 android:layout_gravity="center_horizontal"/>
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Form input data pelanggan baru"
+                android:text="Form update pembayaran dari pelanggan"
                 android:textSize="12dp"
                 android:textStyle="bold"
                 android:layout_gravity="center_horizontal"/>
@@ -71,7 +70,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:text="Jenis Kelamin"/>
             <RadioGroup
                 android:id="@+id/radioGroup"
@@ -90,6 +89,7 @@
                     android:layout_marginLeft="20dp"
                     android:text="Perempuan"/>
             </RadioGroup>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Umur :  "/>
+                    android:text="Berapa umur anda? "/>
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textUmur"
                     android:layout_width="wrap_content"
@@ -113,32 +113,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:max="60"/>
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Jenis Pembayaran"/>
-            <CheckBox
-                android:id="@+id/bayarTunai"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Bayar Tunai"/>
-            <CheckBox
-                android:id="@+id/bayarTransfer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Transfer BANK"/>
-            <CheckBox
-                android:id="@+id/bayarOVO"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Transfer OVO"/>
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonSimpan"
+                android:id="@+id/buttonDaftar"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:text="Simpan"
+                android:text="Update"
                 android:layout_marginTop="20dp"
                 app:cornerRadius="20dp"/>
         </LinearLayout>

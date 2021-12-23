@@ -25,10 +25,11 @@
 
         <Button
             android:id="@+id/button_add_data"
-            android:layout_width="80dp"
-            android:layout_height="72dp"
+            android:layout_width="71dp"
+            android:layout_height="82dp"
             android:text="+"
             android:textSize="24sp"
+            app:cornerRadius="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.903"
