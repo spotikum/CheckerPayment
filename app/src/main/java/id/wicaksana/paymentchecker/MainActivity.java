@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
+
                     @Override public void onItemClick(View view, int position) {
                         int itemPosition = recyclerView.getChildLayoutPosition(view);
                         final GetSetUser item = listDataUser.get(itemPosition);
@@ -113,18 +114,6 @@ public class MainActivity extends AppCompatActivity {
         super.onBackPressed();
 
     }
-
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//        Button button = (Button) findViewById(R.id.button_add_data);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, RegisActivity.class));
-//            }
-//        });
-//    }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
