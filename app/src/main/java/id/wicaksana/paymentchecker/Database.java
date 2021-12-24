@@ -79,7 +79,7 @@ public class Database extends SQLiteOpenHelper {
     public Cursor getDataUser ()
     {
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * from User", null);
+        Cursor cursor = DB.rawQuery("Select * from User ORDER BY id DESC", null);
         return cursor;
 
     }
