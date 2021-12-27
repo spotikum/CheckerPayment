@@ -113,26 +113,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:max="60"/>
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Jenis Pembayaran"/>
-            <CheckBox
-                android:id="@+id/bayarTunai"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Bayar Tunai"/>
-            <CheckBox
-                android:id="@+id/bayarTransfer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Transfer BANK"/>
-            <CheckBox
-                android:id="@+id/bayarOVO"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Transfer OVO"/>
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonSimpan"
                 android:layout_width="150dp"

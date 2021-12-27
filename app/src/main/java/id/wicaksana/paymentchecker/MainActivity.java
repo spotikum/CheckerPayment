@@ -46,35 +46,35 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(MainActivity.this, recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override public void onLongItemClick(View view, int position) {
-                        int itemPosition = recyclerView.getChildLayoutPosition(view);
-                        final GetSetUser item = listDataUser.get(itemPosition);
-                        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                                MainActivity.this);
-                        alertDialogBuilder.setTitle("Warning");
-
-                        alertDialogBuilder
-                                .setMessage("Apakah Anda ingin menghapus data dengan nama " + item.getNama() + " ?")
-                                .setIcon(R.mipmap.ic_launcher)
-                                .setCancelable(false)
-                                .setPositiveButton("Ya", (dialog, id) -> {
-                                    DB.deleteUser(item.getId());
-                                    Toast.makeText(MainActivity.this, "Berhasil menghapus data.", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(MainActivity.this, MainActivity.class));
-                                    finish();
-                                })
-                                .setNegativeButton("Tidak", (dialogInterface, i) -> {
-
-                                });
-
-                        AlertDialog alertDialog = alertDialogBuilder.create();
-
-                        alertDialog.show();
+                    @Override public void onItemClick(View view, int position) {
+//                        int itemPosition = recyclerView.getChildLayoutPosition(view);
+//                        final GetSetUser item = listDataUser.get(itemPosition);
+//                        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+//                                MainActivity.this);
+//                        alertDialogBuilder.setTitle("Warning");
+//
+//                        alertDialogBuilder
+//                                .setMessage("Apakah Anda ingin menghapus data dengan nama " + item.getNama() + " ?")
+//                                .setIcon(R.mipmap.ic_launcher)
+//                                .setCancelable(false)
+//                                .setPositiveButton("Ya", (dialog, id) -> {
+//                                    DB.deleteUser(item.getId());
+//                                    Toast.makeText(MainActivity.this, "Berhasil menghapus data.", Toast.LENGTH_SHORT).show();
+//                                    startActivity(new Intent(MainActivity.this, MainActivity.class));
+//                                    finish();
+//                                })
+//                                .setNegativeButton("Tidak", (dialogInterface, i) -> {
+//
+//                                });
+//
+//                        AlertDialog alertDialog = alertDialogBuilder.create();
+//
+//                        alertDialog.show();
 
                     }
 
 
-                    @Override public void onItemClick(View view, int position) {
+                    @Override public void onLongItemClick(View view, int position) {
                         int itemPosition = recyclerView.getChildLayoutPosition(view);
                         final GetSetUser item = listDataUser.get(itemPosition);
                         Intent intent = new Intent(MainActivity.this, UpdateActivity.class);

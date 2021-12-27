@@ -37,7 +37,6 @@ public class RegisActivity extends AppCompatActivity {
         textTelepon = findViewById(R.id.textTelepon);
         textAlamat = findViewById(R.id.textAlamat);
         textUmur = findViewById(R.id.textUmur);
-        jenisPelanggan = findViewById(R.id.bayarTunai);
         seekBarUmur = findViewById(R.id.seekBarUmur);
         seekBarUmur.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

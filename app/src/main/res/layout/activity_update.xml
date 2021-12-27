@@ -17,14 +17,14 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Update Pembayaran"
+                android:text="Update Pelanggan"
                 android:textSize="24dp"
                 android:textStyle="bold"
                 android:layout_gravity="center_horizontal"/>
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Form update pembayaran dari pelanggan"
+                android:text="Form update data pelanggan"
                 android:textSize="12dp"
                 android:textStyle="bold"
                 android:layout_gravity="center_horizontal"/>
