@@ -10,62 +10,116 @@
     app:cardElevation="3dp"
     app:cardPreventCornerOverlap="false"
     app:cardUseCompatPadding="true">
+
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="15dp"
         android:orientation="vertical">
 
-        <com.google.android.material.textview.MaterialTextView
+        <TextView
             android:id="@+id/nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nama"
-            android:textSize="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="0dp"
+            android:text="Indra Wahyu"
+            android:textSize="16dp"
+            android:fontFamily="@font/poppins_regular"
             android:textStyle="bold" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            android:layout_marginVertical="5dp"/>
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/telepon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Telepon"
-            android:textSize="15dp" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            android:layout_marginVertical="5dp"/>
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/alamat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alamat"
-            android:textSize="15dp" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            android:layout_marginVertical="5dp"/>
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/jenisKelamin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jenis Kelamin"
-            android:textSize="15dp" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            android:layout_marginVertical="5dp"/>
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/umur"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="umur"
-            android:textSize="15dp" />
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/date">-->
+<!--            </ImageView>-->
+<!--            <TextView-->
+<!--                android:id="@+id/date"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="20-20-2020"-->
+<!--                android:textSize="16dp"-->
+<!--                android:paddingStart="5dp"-->
+<!--                android:fontFamily="@font/poppins_regular"/>-->
+
+
+<!--        </LinearLayout>-->
+
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="end">
+
+        <CheckBox
+            android:id="@+id/rbCompleted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end" />
+    </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="15dp"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <com.google.android.material.textview.MaterialTextView-->
+<!--            android:id="@+id/nama"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Nama"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textStyle="bold" />-->
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="@android:color/darker_gray"-->
+<!--            android:layout_marginVertical="5dp"/>-->
+<!--&lt;!&ndash;        <com.google.android.material.textview.MaterialTextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/telepon"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Telepon"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="15dp" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <View&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="1dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:background="@android:color/darker_gray"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginVertical="5dp"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <com.google.android.material.textview.MaterialTextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/alamat"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Alamat"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="15dp" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <View&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="1dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:background="@android:color/darker_gray"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginVertical="5dp"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <com.google.android.material.textview.MaterialTextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/jenisKelamin"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Jenis Kelamin"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="15dp" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <View&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="1dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:background="@android:color/darker_gray"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginVertical="5dp"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <com.google.android.material.textview.MaterialTextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/umur"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="umur"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="15dp" />&ndash;&gt;-->
+<!--    </LinearLayout>-->
 </androidx.cardview.widget.CardView>

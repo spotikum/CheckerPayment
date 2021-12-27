@@ -35,11 +35,11 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         GetSetUser getSetItem = itemLists.get(position);
 
-        holder.nama.setText("Nama : " + getSetItem.getNama());
-        holder.telepon.setText("Telepon : " + getSetItem.getTelepon());
-        holder.alamat.setText("Alamat : " + getSetItem.getAlamat());
-        holder.jenisKelamin.setText("Jenis Kelamin : " + getSetItem.getJk());
-        holder.umur.setText("Umur : " + getSetItem.getUmur() + " Tahun");
+        holder.nama.setText(getSetItem.getNama());
+//        holder.telepon.setText("Telepon : " + getSetItem.getTelepon());
+//        holder.alamat.setText("Alamat : " + getSetItem.getAlamat());
+//        holder.jenisKelamin.setText("Jenis Kelamin : " + getSetItem.getJk());
+//        holder.umur.setText("Umur : " + getSetItem.getUmur() + " Tahun");
     }
 
     @Override
@@ -55,10 +55,10 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.ViewHolder> {
             super(view);
 
             nama = view.findViewById(R.id.nama);
-            telepon = view.findViewById(R.id.telepon);
-            alamat = view.findViewById(R.id.alamat);
-            jenisKelamin = view.findViewById(R.id.jenisKelamin);
-            umur = view.findViewById(R.id.umur);
+//            telepon = view.findViewById(R.id.telepon);
+//            alamat = view.findViewById(R.id.alamat);
+//            jenisKelamin = view.findViewById(R.id.jenisKelamin);
+//            umur = view.findViewById(R.id.umur);
         }
     }
 }
